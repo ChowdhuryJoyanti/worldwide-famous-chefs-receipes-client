@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Footer = () => {
+const Login = () => {
     return (
         <div>
-            <h3>this is footer</h3>
+            <h3>this is login</h3>
         </div>
     );
 };
 
-export default Footer;
+export default Login;
