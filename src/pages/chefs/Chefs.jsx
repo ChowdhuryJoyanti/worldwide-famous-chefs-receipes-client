@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
+import { Link } from 'react-router-dom';
 
 const Chefs = ({chef}) => {
     const{chef_name,chef_experience_years,chef_num_recipes,chef_likes,chefs_image} = chef;
@@ -18,7 +19,7 @@ const Chefs = ({chef}) => {
                         <p>Experience:{chef_experience_years}</p>
                         <p>Likes:{chef_likes}</p>
                         <p>Number of Recipe:{chef_num_recipes}</p>
-                        <Button variant="warning">View Details</Button>
+                        <Link to=""><Button variant="warning">View Details</Button></Link>
 
                     </Card.Body>
                     <Card.Footer>

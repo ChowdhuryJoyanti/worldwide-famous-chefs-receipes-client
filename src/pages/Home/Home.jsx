@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { useLoaderData } from 'react-router-dom';
 import Chefs from '../chefs/Chefs';
+import { Container } from 'react-bootstrap';
 
 const Home = () => {
 
@@ -11,13 +12,14 @@ const Home = () => {
     .then(res => res.json())
     .then(data => setChefsData(data))
    },[])
+   console.log(chefsData);
 
-   const chefData = useLoaderData()
+//    const chefData = useLoaderData()
 
     return (
-        <div>
-       
-   
+        <Container>
+            
+        
             {
                 chefsData.map(chef => <Chefs
                     key={chef._id}
@@ -27,7 +29,7 @@ const Home = () => {
 
             }
     
-        </div>
+        </Container>
     );
 };
 

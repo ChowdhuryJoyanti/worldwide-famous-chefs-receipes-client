@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import slider from '../../../assets/home-banner2.jpg'
 import slider2 from '../../../assets/home-banner3.jpg'
 import { Container } from 'react-bootstrap';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Header = () => {
+    const {user} = useContext(AuthContext)
     return (
         <Container>
           
