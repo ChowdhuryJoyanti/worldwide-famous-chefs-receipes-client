@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Chefs from '../chefs/Chefs';
 import { Container } from 'react-bootstrap';
+import'./Home.css';
 
 const Home = () => {
 
@@ -19,7 +20,8 @@ const Home = () => {
     return (
         <Container>
             
-        
+        <div className='chefs-container'>
+            <div className=" row chef-container">
             {
                 chefsData.map(chef => <Chefs
                     key={chef._id}
@@ -28,6 +30,10 @@ const Home = () => {
                 ></Chefs> )
 
             }
+            </div>
+
+        </div>
+          
     
         </Container>
     );

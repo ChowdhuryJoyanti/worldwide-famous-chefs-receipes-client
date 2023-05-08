@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Navbar,Nav,Container, Button } from 'react-bootstrap';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const NavBar = () => {
+
+
+  const {user} = useContext(AuthContext);
     return (
         <Container className='mb-5'>
             <h3 className='text-center text-warning -fw-bold'>Food Delicious</h3>
@@ -14,10 +18,11 @@ const NavBar = () => {
           <Nav className="mx-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/details">Details</Nav.Link>
+            <Nav.Link href="/blog">Blog</Nav.Link>
            
           </Nav>
           <Nav>
-            <Nav.Link href="/profile">Profile</Nav.Link>
+            <Nav.Link href="/profile">{user.displayName}</Nav.Link>
             <Nav.Link>
             <Button variant="info" href='/login'>Login</Button>
             </Nav.Link>

@@ -7,6 +7,7 @@ import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import LoginLayout from "../layout/LoginLayout/LoginLayout";
 import Details from "../pages/Details/Details";
+import Blog from "../pages/Blog/Blog";
 
 
 
@@ -21,11 +22,16 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                loader:({params}) => fetch(`http://localhost:5000/alldata`)
+                // loader:({params}) => fetch(`http://localhost:5000/alldata`)
             },
             {
                 path:'/details',
                 element:<Details></Details>    
+            
+            },
+            {
+                path:'/blog',
+                element:<Blog></Blog>   
             
             },
             {

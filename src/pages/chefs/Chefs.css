@@ -1,0 +1,10 @@
+ .chefs-container{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    margin-top: 20px;
+}
+.chefs-image{
+    width: 400px;
+    height: 450px;
+} 
+
