@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Navbar,Nav,Container, Button } from 'react-bootstrap';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { FaBeer, FaUserCircle, FaUserGraduate } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 const NavBar = () => {
@@ -22,9 +24,17 @@ const NavBar = () => {
            
           </Nav>
           <Nav>
-            <Nav.Link href="/profile">{user.displayName}</Nav.Link>
+            {user&&
+              <Nav.Link href="/profile">
+              <FaUserCircle style={{fontSize:'2.rem'}}></FaUserCircle></Nav.Link>
+            }
             <Nav.Link>
-            <Button variant="info" href='/login'>Login</Button>
+            {user ?
+              <Button variant="info" href='/login'>Logout</Button>:
+              <Link to="/login">           
+                 <Button variant="info" href='/login'>Login</Button>
+              </Link>
+            }
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

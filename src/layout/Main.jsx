@@ -14,7 +14,7 @@ const Main = () => {
         
         <div>
             <NavBar></NavBar>
-            <Header></Header>
+            {/* <Header></Header> */}
             <Outlet></Outlet>
             <Footer></Footer>
 

@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import ChefLayout from "../layout/ChefLayout";
 
@@ -21,7 +21,11 @@ const router = createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:<Home></Home>,
+                element:<Home></Home>
+            },
+            {
+                path:'/',
+                element:<Navigate to="/home"></Navigate>
                 // loader:({params}) => fetch(`http://localhost:5000/alldata`)
             },
             {
