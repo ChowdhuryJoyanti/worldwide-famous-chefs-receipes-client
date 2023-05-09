@@ -8,7 +8,13 @@ import { Link } from 'react-router-dom';
 const NavBar = () => {
 
 
-  const {user} = useContext(AuthContext);
+  const {user,logOut} = useContext(AuthContext);
+
+  const handleLogOut = () => {
+      logOut()
+      .then()
+      .catch(error => console.log(error))
+  }
     return (
         <Container className='mb-5'>
             <h3 className='text-center text-warning -fw-bold'>Food Delicious</h3>
@@ -30,7 +36,7 @@ const NavBar = () => {
             }
             <Nav.Link>
             {user ?
-              <Button variant="info" href='/login'>Logout</Button>:
+              <Button onClick={handleLogOut} variant="info" href='/login'>Logout</Button>:
               <Link to="/login">           
                  <Button variant="info" href='/login'>Login</Button>
               </Link>

@@ -8,6 +8,7 @@ import Login from "../pages/Login/Login";
 import LoginLayout from "../layout/LoginLayout/LoginLayout";
 import Details from "../pages/Details/Details";
 import Blog from "../pages/Blog/Blog";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/details/:id',
-                element:<Details></Details>
+                element:<PrivateRoute><Details></Details></PrivateRoute>
             }
             // {
             //     path:'/login',

@@ -13,7 +13,7 @@ const Home = () => {
     .then(res => res.json())
     .then(data => setChefsData(data))
    },[])
-   console.log(chefsData);
+//    console.log(chefsData);
 
 //    const chefData = useLoaderData()
 

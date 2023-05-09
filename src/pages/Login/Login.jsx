@@ -1,12 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect ,} from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link ,useLocation,useNavigate} from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
-  const {signIn} = useContext(AuthContext);
+  const {signIn,user} = useContext(AuthContext);
+  const navigate  = useNavigate()
+  const location = useLocation();
+  console.log('login',location);
+  const from = location.state?.from?.pathname || '/home';
+
 
   
     const handleLogin = event => {
@@ -21,11 +26,20 @@ const Login = () => {
       .then(result =>{
           const loggedUser = result.user;
           console.log(loggedUser);
+          // navigate(from ,{ replace :true});
       })
       .catch(error =>{
         console.log(error);
       })
+
     }
+
+    useEffect(()=>{
+      if(user){
+      navigate(from,{replace:true})
+      }
+      },[user])
+
     return (
         <Container className='mx-auto w-25'>
           <h3>Please Login</h3>

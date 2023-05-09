@@ -11,7 +11,7 @@ const Details = () => {
         console.log(chefsRecipe);
 
     },[])
-
+        console.log(chefsRecipe);
     return (
         <div>
             <h3>details</h3>
