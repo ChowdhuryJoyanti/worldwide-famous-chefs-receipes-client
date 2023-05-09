@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Chefs.css'
 
 
 
 const Chefs = ({chef}) => {
-    const{chef_name,chef_experience_years,chef_num_recipes,chef_likes,chefs_image} = chef;
+    const{_id,chef_name,chef_experience_years,chef_num_recipes,chef_likes,chefs_image} = chef;
+    // const navigate = useNavigate();
     return (
         <div>
              <Container>
@@ -94,7 +95,7 @@ const Chefs = ({chef}) => {
                 <p>Experience:{chef_experience_years}</p>
                         <p>Likes:{chef_likes}</p>
                         <p>Number of Recipe:{chef_num_recipes}</p>
-                        <Link to=""><Button variant="warning">View Details</Button></Link>
+                        <Link to={`/details/${_id}`}><Button variant="warning">View Details</Button></Link>
 
                 </div>
 

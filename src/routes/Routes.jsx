@@ -28,11 +28,7 @@ const router = createBrowserRouter([
                 element:<Navigate to="/home"></Navigate>
                 // loader:({params}) => fetch(`http://localhost:5000/alldata`)
             },
-            {
-                path:'/details',
-                element:<Details></Details>    
-            
-            },
+          
             {
                 path:'/blog',
                 element:<Blog></Blog>   
@@ -46,6 +42,10 @@ const router = createBrowserRouter([
                 path:"/register",
                 element:<Register></Register>
             },
+            {
+                path:'/details/:id',
+                element:<Details></Details>
+            }
             // {
             //     path:'/login',
             //     element:<Login></Login>

@@ -26,7 +26,15 @@ const signIn = (email,password) =>{
         createUser,
         signIn,
 }
-    
+
+
+
+
+
+
+
+
+
     return (
         <AuthContext.Provider value={authInfo}>
                 {children}
