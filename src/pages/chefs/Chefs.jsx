@@ -95,7 +95,7 @@ const Chefs = ({chef}) => {
                 <p>Experience:{chef_experience_years}</p>
                         <p>Likes:{chef_likes}</p>
                         <p>Number of Recipe:{chef_num_recipes}</p>
-                        <Link to={`/details/${_id}`}><Button variant="warning">View Details</Button></Link>
+                        <Link to={`/details/${_id}`}><Button variant="warning">View Recipe</Button></Link>
 
                 </div>
 

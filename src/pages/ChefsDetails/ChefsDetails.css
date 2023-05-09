@@ -1,0 +1,16 @@
+.container-chefs-details{
+    border-radius: 5px;
+    border: 2px solid lavender;
+    margin: 10px;
+   
+}
+
+
+
+.details-image{
+    height: 400px;
+    width: 400px;
+    border-radius: 5px;
+    border: 2px solid lavender;
+
+}

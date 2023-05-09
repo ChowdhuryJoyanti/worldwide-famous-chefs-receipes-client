@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Chefs from '../chefs/Chefs';
 import { Container } from 'react-bootstrap';
+import ChefsDetails from '../ChefsDetails/ChefsDetails';
 
 const Details = () => {
     const [chefsRecipe,setChefsRecipe] = useState([]);
     useEffect(()=>{
-        fetch( `http://localhost:5000/allData`)
+       fetch(`http://localhost:5000/allData`)
         .then( res => res.json())
         .then(data => setChefsRecipe(data))
         console.log(chefsRecipe);
@@ -14,13 +15,18 @@ const Details = () => {
         console.log(chefsRecipe);
     return (
         <div>
-            <h3>details</h3>
+           
             <Container>
             
             <div className='chefs-container'>
                 <div className=" row chef-container">
                 {
-                    chefsRecipe.map(chefRecipe => <p>hello</p> )
+                    chefsRecipe.map(chefRecipe => <ChefsDetails
+                                key={chefRecipe._id}
+                                chefRecipe={chefRecipe}
+                    
+                    
+                    ></ChefsDetails> )
     
                 }
                 </div>

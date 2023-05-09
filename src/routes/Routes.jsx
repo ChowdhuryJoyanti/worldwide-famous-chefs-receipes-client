@@ -9,6 +9,7 @@ import LoginLayout from "../layout/LoginLayout/LoginLayout";
 import Details from "../pages/Details/Details";
 import Blog from "../pages/Blog/Blog";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 
 
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
             {
                 path:'/details/:id',
                 element:<PrivateRoute><Details></Details></PrivateRoute>
+            },
+            {
+                    path:'*',
+                    element:<ErrorPage></ErrorPage>
             }
             // {
             //     path:'/login',
