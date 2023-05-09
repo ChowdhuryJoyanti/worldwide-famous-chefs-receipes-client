@@ -1,13 +1,15 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import"./Blog.css"
 
 const Blog = () => {
     return (
-        <Container>
-            <h2>Questions</h2>
-            <div>
-                <h3>1. What is the differences between uncontrolled and controlled components?</h3>
-                <p> Ans:In most cases, controlled components is used to implement forms.
+        <Container className='bg-light mt-5'>
+            <h2 className='text-center header'>Questions</h2>
+            <div className='mt-5'>
+                <h3 className='question'>1. What is the differences between uncontrolled and controlled components?</h3>
+                <p> <span className='bg-info  ans '>Ans:</span> 
+                    In most cases, controlled components is used to implement forms.
                     In a controlled component, form data is handled by a React component.<br></br>
                     The alternative is uncontrolled components, where form data is handled
                     by the DOM itself.<br></br>
@@ -16,8 +18,8 @@ const Blog = () => {
                     event handler for every state update,
                     you can use a ref to get form values from the DOM.</p>
 
-                <h3>How to validate React props using PropTypes?</h3>
-                <p>Ans:Props and PropTypes are important mechanisms for passing read-only attributes
+                <h3  className='question'>How to validate React props using PropTypes?</h3>
+                <p><span className='bg-info  ans '>Ans:</span> Props and PropTypes are important mechanisms for passing read-only attributes
                     between React components.<br></br>
 
                     We can use React props, short for properties, to send data from one component <br></br>
@@ -29,8 +31,8 @@ const Blog = () => {
                     Forgetting to pass a required prop into a component that needs it could cause your app <br></br>
                     to behave unexpectedly.</p>
 
-                <h3>3.What is the difference between nodejs and express js?</h3>
-                <p>Ans:
+                <h3  className='question'>3.What is the difference between nodejs and express js?</h3>
+                <p><span className='bg-info  ans '>Ans:</span> 
                     <ul>
                         <li>
                             Node.js is a platform for building the i/o applications which are server-side<br></br>
@@ -42,8 +44,8 @@ const Blog = () => {
                         </li>
                     </ul>
                 </p>
-                <h3>4.What is a custom hook, and why will you create a custom hook?</h3>
-                <p>Ans:A custom Hook is a JavaScript function whose name starts with ”use” and that may <br></br> 
+                <h3  className='question'>4.What is a custom hook, and why will you create a custom hook?</h3>
+                <p><span className='bg-info  ans '>Ans:</span> A custom Hook is a JavaScript function whose name starts with ”use” and that may <br></br> 
                 call other Hooks. That's it! If you have code in a component that you feel would make<br></br>
                  sense to extract, either for reuse elsewhere
                      or to keep the component simpler, you can pull that out into a function.</p>
