@@ -69,7 +69,8 @@ const router = createBrowserRouter([
             // },
         ]
     },
-    // {
+    // { run dev
+    
     //     path:'chefs',
     //     element:<ChefLayout></ChefLayout>,
     //     children:[
