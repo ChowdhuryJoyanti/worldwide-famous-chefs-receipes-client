@@ -4,13 +4,16 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
+
+console.log('environment variable ',import.meta.env.VITE_apiKey)
 const firebaseConfig = {
-  apiKey: "AIzaSyCiWL3pjap2bmZ5dAzo3aW8ctfdKwipyKc",
-  authDomain: "worldwide-famous-chefs-receipe.firebaseapp.com",
-  projectId: "worldwide-famous-chefs-receipe",
-  storageBucket: "worldwide-famous-chefs-receipe.appspot.com",
-  messagingSenderId: "432209486439",
-  appId: "1:432209486439:web:4e9c3d614686cd4e0deac2"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase
