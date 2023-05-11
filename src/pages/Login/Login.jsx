@@ -1,11 +1,16 @@
-import React, { useContext, useEffect ,} from 'react';
+import React, { useContext, useEffect, useState ,} from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link ,useLocation,useNavigate} from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from '../../firebase/firebase.config';
 
 const Login = () => {
+  const auth = getAuth(app);
+  const [users,setUsers]  = useState(null)
+
   const {signIn,user} = useContext(AuthContext);
   const navigate  = useNavigate()
   const location = useLocation();
@@ -13,7 +18,35 @@ const Login = () => {
   const from = location.state?.from?.pathname || '/home';
 
 
+
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth,googleProvider)
+        .then(result => {
+          const loggedInUser = result.user;
+          console.log(loggedInUser);
+          setUsers(loggedInUser)
+        })
+        .catch(error =>{
+          console.log('error',error.message);
+        })
+    }
   
+
+      const handleGithubSignIn = () =>{
+          console.log('github');
+          signInWithPopup(auth,githubProvider )
+          .then(result =>{
+            const loggedUser  = result.user;
+            console.log(loggedUser);
+            setUsers(loggedUser)
+          })
+          .catch(error => {
+            console.log(error);
+          })
+      }
     const handleLogin = event => {
        event.preventDefault();
        const from = event.target;
@@ -62,6 +95,12 @@ const Login = () => {
 
       <Button  variant="info" type="submit">
       Log In
+      </Button>
+      <Button  onClick={handleGoogleSignIn} variant="info" type="submit">
+       Google Log In
+      </Button>
+      <Button  onClick={handleGithubSignIn} variant="info" type="submit">
+       Github Log In
       </Button>
       <br></br>
       <Form.Text className="text-muted">

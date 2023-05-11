@@ -25,7 +25,7 @@ const Details = () => {
             
             <div className='chefs-container'>
                 <div className=" row chef-container">
-                    <p>{chefsRecipe.chef_name}</p>
+                    {/* <p>{chefsRecipe.chef_name}</p> */}
                 {
                     chefsRecipe?.recipes.map(chefRecipe => <ChefsDetails
                                 key={chefRecipe._id}
