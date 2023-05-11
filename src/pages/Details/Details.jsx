@@ -2,17 +2,22 @@ import React, { useEffect, useState } from 'react';
 import Chefs from '../chefs/Chefs';
 import { Container } from 'react-bootstrap';
 import ChefsDetails from '../ChefsDetails/ChefsDetails';
+import { useParams } from 'react-router-dom';
 
 const Details = () => {
-    const [chefsRecipe,setChefsRecipe] = useState([]);
+    const [chefsRecipe,setChefsRecipe] = useState(null);
+    const {id} = useParams();
+    console.log(id);
     useEffect(()=>{
-       fetch(`http://localhost:5000/allData`)
+    //    fetch(`http://localhost:5000/allData/`)
+       fetch(`http://localhost:5000/chef/${id}`)
         .then( res => res.json())
+        // .then(data => console.log(data))
         .then(data => setChefsRecipe(data))
-        console.log(chefsRecipe);
+        // console.log(chefsRecipe);
 
     },[])
-        console.log(chefsRecipe);
+        // console.log(chefsRecipe);
     return (
         <div>
            
@@ -20,8 +25,9 @@ const Details = () => {
             
             <div className='chefs-container'>
                 <div className=" row chef-container">
+                    <p>{chefsRecipe.chef_name}</p>
                 {
-                    chefsRecipe.map(chefRecipe => <ChefsDetails
+                    chefsRecipe?.recipes.map(chefRecipe => <ChefsDetails
                                 key={chefRecipe._id}
                                 chefRecipe={chefRecipe}
                     
@@ -38,6 +44,29 @@ const Details = () => {
         </div>
     );
 };
+
+
+
+// const { id } = useParams();
+
+// useEffect(() => {
+//   fetch(`http://localhost:5000/allData/${id}`)
+//     .then((res) => res.json())
+//     .then((data) => console.log(data.item));
+// }, []);
+
+// console.log(id);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
