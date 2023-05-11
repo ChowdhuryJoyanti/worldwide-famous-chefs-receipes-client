@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -6,10 +6,15 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
+        const [error,setError] = useState('');
+        const [success,setSuccess] = useState('');
+
+
     const { createUser} = useContext(AuthContext);
 
     const handleRegister = event =>{
         event.preventDefault();
+        setSuccess('');
         const from = event.target;
         const name = from.name.value;
         const photo = from.photo.value;
@@ -17,14 +22,32 @@ const Register = () => {
         const password = from.password.value;
 
             console.log(name,password,photo,email);
+
+              setError('');
+              setSuccess('');
+        if(password.length <6){
+          setError('password must be 6 character');
+          return;
+        }
+
+
+
+
+
+
             createUser(email,password)
             .then(result =>{
                 const createdUser = result.user;
                 console.log(createdUser);
+                setError('')
+                from.reset();
+                setSuccess('successful')
             } )
             .catch(error =>{
-                console.log(error);
-            })
+                console.error(error.message);
+                setError(error.message);
+              
+               })
 
 
     }
@@ -63,6 +86,8 @@ const Register = () => {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" name='password' placeholder="Password"  required/>
       </Form.Group>
+      <p className='text-danger'>{error}</p>
+      <p className='text-success'>{success}</p>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" name='accept' label="Terms and Condition" />
       </Form.Group>
@@ -74,12 +99,8 @@ const Register = () => {
       <Form.Text className="text-muted">
     Already Have an account?    <Link to="/login">Log In</Link>
        </Form.Text>
-      <Form.Text className="text-success">
+        
        
-       </Form.Text>
-       <Form.Text className="text-danger">
-       
-       </Form.Text>
     </Form>
         </Container>
         </div>

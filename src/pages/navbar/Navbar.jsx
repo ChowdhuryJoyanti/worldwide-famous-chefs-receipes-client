@@ -32,7 +32,7 @@ const NavBar = () => {
           <Nav>
             {user&&
               <Nav.Link href="/profile">
-              <FaUserCircle style={{fontSize:'4.rem'}}></FaUserCircle></Nav.Link>
+              <FaUserCircle style={{fontSize:'2rem'}}></FaUserCircle></Nav.Link>
             }
             <Nav.Link>
             {user ?

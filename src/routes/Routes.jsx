@@ -52,35 +52,10 @@ const router = createBrowserRouter([
                     path:'*',
                     element:<ErrorPage></ErrorPage>
             }
-            // {
-            //     path:'/login',
-            //     element:<Login></Login>
-            // },
-            // {
-            //     path:'/Register',
-            //     element:<Register></Register>
-            // },
-
-
-            // {
-            //     path:'/country/:id',
-            //     element:<Country></Country>,
-            //     loader: ({params}) => fetch(`http://localhost:5000/countries/${params.id}`)
-            // },
+         
         ]
     },
-    // { run dev
-    
-    //     path:'chefs',
-    //     element:<ChefLayout></ChefLayout>,
-    //     children:[
-    //         {
-    //             path:'id',
-    //             element:<Chefs></Chefs>
-
-    //         }
-    //     ]
-    // }
+  
 ])
 
 export default router;

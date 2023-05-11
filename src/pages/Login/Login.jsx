@@ -93,13 +93,15 @@ const Login = () => {
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
 
-      <Button  variant="info" type="submit">
+      <Button  className='mt-2' variant="info" type="submit">
       Log In
       </Button>
-      <Button  onClick={handleGoogleSignIn} variant="info" type="submit">
+      <br></br>
+      <Button className='mt-2'   onClick={handleGoogleSignIn} variant="info" type="submit">
        Google Log In
       </Button>
-      <Button  onClick={handleGithubSignIn} variant="info" type="submit">
+      <br></br>
+      <Button className='mt-2'  onClick={handleGithubSignIn} variant="info" type="submit">
        Github Log In
       </Button>
       <br></br>
