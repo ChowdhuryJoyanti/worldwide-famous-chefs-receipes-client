@@ -4,12 +4,14 @@ import { useLoaderData } from 'react-router-dom';
 import Chefs from '../chefs/Chefs';
 import { Container } from 'react-bootstrap';
 import'./Home.css';
+import Header from '../Shared/Header/Header';
+
 
 const Home = () => {
 
     const [chefsData, setChefsData] = useState([]);
    useEffect(()=>{
-    fetch(`http://localhost:5000/alldata`)
+    fetch(`https://worldwide-famous-chefs-receipes-server-chowdhuryjoyanti.vercel.app/alldata`)
     .then(res => res.json())
     .then(data => setChefsData(data))
    },[])
@@ -19,7 +21,7 @@ const Home = () => {
 
     return (
         <Container>
-            
+            <Header></Header>
         <div className='chefs-container'>
             <div className=" row chef-container">
             {

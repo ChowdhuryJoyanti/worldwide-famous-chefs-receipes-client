@@ -1,9 +1,13 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import"./Blog.css"
+import { PDFViewer, Document, Page, Text } from '@react-pdf/renderer';
+
 
 const Blog = () => {
     return (
+        <Document>
+
         <Container className='bg-light mt-5'>
             <h2 className='text-center header'>Questions</h2>
             <div className='mt-5'>
@@ -56,6 +60,7 @@ const Blog = () => {
             </div>
 
         </Container>
+        </Document>
     );
 };
 

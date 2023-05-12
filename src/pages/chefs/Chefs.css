@@ -8,3 +8,12 @@
     height: 450px;
 } 
 
+
+.LazyLoad {
+    opacity: 1;
+    transition: all 5s ease-in-out;
+  }
+
+  .is-visible {
+    opacity: 0;
+  }

@@ -10,12 +10,13 @@ import app from '../../firebase/firebase.config';
 const Login = () => {
   const auth = getAuth(app);
   const [users,setUsers]  = useState(null)
+  const [error,setError] = useState('');
 
   const {signIn,user} = useContext(AuthContext);
   const navigate  = useNavigate()
   const location = useLocation();
   console.log('login',location);
-  const from = location.state?.from?.pathname || '/home';
+  const from = location?.state?.from?.pathname || '/';
 
 
 
@@ -49,9 +50,13 @@ const Login = () => {
       }
     const handleLogin = event => {
        event.preventDefault();
-       const from = event.target;
-      const email = from.email.value;
-      const password = from.password.value;
+       const form = event.target;
+      const email = form.email.value;
+      const password = form.password.value;
+      if(!password === password){
+            setError('password did not matched')
+            return
+      }
       console.log(email,password);
 
 
@@ -59,6 +64,7 @@ const Login = () => {
       .then(result =>{
           const loggedUser = result.user;
           console.log(loggedUser);
+          navigate(from,{replace:true})
           // navigate(from ,{ replace :true});
       })
       .catch(error =>{
@@ -67,11 +73,11 @@ const Login = () => {
 
     }
 
-    useEffect(()=>{
-      if(user){
-      navigate(from,{replace:true})
-      }
-      },[user])
+    // useEffect(()=>{
+    //   if(user){
+    //   navigate(from,{replace:true})
+    //   }
+    //   },[user])
 
     return (
         <Container className='mx-auto w-25'>

@@ -3,13 +3,16 @@ import"./ChefsDetails.css";
 
 const ChefsDetails = ({chefRecipe}) => {
     // const{_id,chef_name,chef_experience_years,chef_num_recipes,chef_likes,chefs_image,chefs_description} = chefRecipe;
-    const {recipe_name,recipe_description} = chefRecipe;
+    const {recipe_name,recipe_description,recipe_img_url } = chefRecipe;
+   
+    console.log(chefRecipe);
+
     return (
 
 
         <div className='container-chefs-details'>
         
-            <img className='details-image' src={chefRecipe.recipes.recipe_img_url} alt="" />
+            <img className='details-image' src={recipe_img_url} alt="" />
 
             {/* <h2>{chef_name}</h2>
             <p>Experience:{chef_experience_years}</p>

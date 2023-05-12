@@ -9,7 +9,7 @@ const Details = () => {
     const {id} = useParams();
     console.log(id);
     useEffect(()=>{
-       fetch(`http://localhost:5000/chef/${id}`)
+       fetch(`https://worldwide-famous-chefs-receipes-server-chowdhuryjoyanti.vercel.app/chef/${id}`)
         .then( res => res.json())
         // .then(data => console.log(data))
         .then(data => setChefsRecipe(data))
@@ -24,10 +24,11 @@ const Details = () => {
             
             <div className='chefs-container'>
                 <div className=" row chef-container">
-                    <p>{chefsRecipe.chef_name}</p>
+                    <p>{chefsRecipe?.chef_name}</p>
+                  <img src={chefsRecipe?.chef_img} alt="" />
                 {
                     chefsRecipe?.recipes.map(chefRecipe => <ChefsDetails
-                                key={chefRecipe._id}
+                                key={chefRecipe?._id}
                                 chefRecipe={chefRecipe}
                     
                     

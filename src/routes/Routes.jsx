@@ -28,7 +28,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Navigate to="/home"></Navigate>
-                // loader:({params}) => fetch(`http://localhost:5000/alldata`)
+                // loader:({params}) => fetch(`https://worldwide-famous-chefs-receipes-server-chowdhuryjoyanti.vercel.app/alldata`)
             },
           
             {
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
                 element:<PrivateRoute><Details></Details></PrivateRoute>
             },
             {
-                    path:'*',
+                    path:'/*',
                     element:<ErrorPage></ErrorPage>
             }
          

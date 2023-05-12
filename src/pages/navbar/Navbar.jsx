@@ -1,14 +1,20 @@
 import React, { useContext } from 'react';
-import { Navbar,Nav,Container, Button } from 'react-bootstrap';
+import { Navbar,Nav,Container, Button, NavLink } from 'react-bootstrap';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { FaBeer, FaUserCircle, FaUserGraduate } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import img from '../../assets/shutterstock_153843404-300x300.jpeg'
 import './Navbar.css'
+import Header from '../Shared/Header/Header';
 
 
 const NavBar = () => {
-
+      // const navLinkStyle = ({isActive}) =>{
+      //   return{
+      //     fontWeight:isActive ? 'bold' : 'normal'
+          
+      //   }
+      // }
 
   const {user,logOut} = useContext(AuthContext);
 
@@ -27,7 +33,6 @@ const NavBar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
             <Nav.Link href="/">Home</Nav.Link>
-         
             <Nav.Link href="/blog">Blog</Nav.Link>
            
           </Nav>
@@ -35,7 +40,7 @@ const NavBar = () => {
             {user&&
               <Nav.Link href="">
               {/* <FaUserCircle style={{fontSize:'2rem'}}><img className='' src={img} alt="" srcset="" /></FaUserCircle></Nav.Link> */}
-             <img className='img-fluid' style={{fontSize:'2rem'}} src={img} alt="" srcset="" /></Nav.Link>
+             <img className='image' style={{fontSize:'2rem'}} src={img} alt="" srcset="" /></Nav.Link>
             }
             <Nav.Link>
             {user ?
@@ -49,6 +54,7 @@ const NavBar = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+            {/* <Header></Header> */}
         </Container>
     );
 };

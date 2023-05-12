@@ -5,6 +5,13 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import { Link, useNavigate } from 'react-router-dom';
 import './Chefs.css'
 
+import LazyLoad from 'react-lazyload';
+
+
+
+
+
+
 
 
 const Chefs = ({ chef }) => {
@@ -17,7 +24,10 @@ const Chefs = ({ chef }) => {
       <div className='chefs-container card'>
         <div className='row'>
           <div className='col'>
-            <img className='chefs-image' src={chef.chefs_image} />
+        {/* <LazyLoad offset={100} once> <img className='chefs-image' src={chef.chefs_image}  alt="Lazy Loaded Image" /></LazyLoad> */}
+        <LazyLoad >
+        <img className='chefs-image' src={chef.chefs_image}  alt="" />
+        </LazyLoad>
             <h2>{chef.chef_name}</h2>
             <p>Experience:{chef_experience_years}</p>
             <p>Likes:{chef_likes}</p>
@@ -30,6 +40,9 @@ const Chefs = ({ chef }) => {
       </div>
 
     </Container>
+
+
+  
     </div>
   );
 };
