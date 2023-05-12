@@ -10,20 +10,25 @@ import Header from '../pages/Shared/Header/Header';
 import Footer from '../pages/Shared/Footer/Footer';
 import { PDFViewer, Document, Page, Text } from '@react-pdf/renderer';
 import Blog from '../pages/Blog/Blog';
+import Works from '../pages/Works/Works';
+import Faq from '../pages/Faq/Faq';
 
 const Main = () => {
     return (
 
-        <div>
+        <Container>
             <NavBar></NavBar>
             {/* <Header></Header> */}
             <Outlet></Outlet>
+            <Works></Works>
+            <Faq></Faq>
             <Footer></Footer>
             <PDFViewer>
                 <Blog></Blog>
             </PDFViewer>
+            
 
-        </div>
+        </Container>
     );
 };
 

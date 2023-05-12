@@ -1,0 +1,21 @@
+.chef-details{
+    text-align: center;
+    margin-left: 10px;
+    padding-right: 20px;
+    margin: auto;
+  
+}
+.chef-img{
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+ 
+}
+
+
+.chefs-details{
+           display: flex;
+           text-align: center;
+           justify-content: center;
+           align-items: center; 
+}

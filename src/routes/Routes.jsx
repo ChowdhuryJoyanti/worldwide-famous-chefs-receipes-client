@@ -10,6 +10,8 @@ import Details from "../pages/Details/Details";
 import Blog from "../pages/Blog/Blog";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Works from "../pages/Works/Works";
+import Faq from "../pages/Faq/Faq";
 
 
 
@@ -30,12 +32,21 @@ const router = createBrowserRouter([
                 element:<Navigate to="/home"></Navigate>
                 // loader:({params}) => fetch(`https://worldwide-famous-chefs-receipes-server-chowdhuryjoyanti.vercel.app/alldata`)
             },
+            {
+                path:'/works',
+                element:<Works></Works>
+            },
+            {
+                path:'/faq',
+                element:<Faq></Faq>
+            },
           
             {
                 path:'/blog',
                 element:<Blog></Blog>   
             
             },
+
             {
                 path:"/login",
                 element:<Login></Login>
@@ -48,6 +59,11 @@ const router = createBrowserRouter([
                 path:'/details/:id',
                 element:<PrivateRoute><Details></Details></PrivateRoute>
             },
+
+        
+
+
+
             {
                     path:'/*',
                     element:<ErrorPage></ErrorPage>
