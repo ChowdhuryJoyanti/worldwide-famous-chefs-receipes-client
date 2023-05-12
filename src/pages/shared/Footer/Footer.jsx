@@ -61,7 +61,7 @@ const Footer = () => {
         <Card.Text>
         
           <Link className='footer-link bg-info' to="/">Home</Link>
-                    <Link className='footer-link bg-info' to="/details">Details</Link>
+                    <Link className='footer-link bg-info' to="/">Details</Link>
                     <Link className='footer-link bg-info' to="/login">Log in</Link>
                     <Link className='footer-link bg-info' to="/register">Contact Us</Link>
       

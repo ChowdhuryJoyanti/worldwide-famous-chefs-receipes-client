@@ -9,7 +9,6 @@ const Details = () => {
     const {id} = useParams();
     console.log(id);
     useEffect(()=>{
-    //    fetch(`http://localhost:5000/allData/`)
        fetch(`http://localhost:5000/chef/${id}`)
         .then( res => res.json())
         // .then(data => console.log(data))
@@ -25,7 +24,7 @@ const Details = () => {
             
             <div className='chefs-container'>
                 <div className=" row chef-container">
-                    {/* <p>{chefsRecipe.chef_name}</p> */}
+                    <p>{chefsRecipe.chef_name}</p>
                 {
                     chefsRecipe?.recipes.map(chefRecipe => <ChefsDetails
                                 key={chefRecipe._id}
@@ -49,52 +48,4 @@ const Details = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const Home = () => {
-
-//     const [chefsData, setChefsData] = useState([]);
-//    useEffect(()=>{
-//     fetch(`http://localhost:5000/alldata`)
-//     .then(res => res.json())
-//     .then(data => setChefsData(data))
-//    },[])
-//    console.log(chefsData);
-
-// //    const chefData = useLoaderData()
-
-//     return (
-//         <Container>
-            
-//         <div className='chefs-container'>
-//             <div className=" row chef-container">
-//             {
-//                 chefsData.map(chef => <Chefs
-//                     key={chef._id}
-//                     chef={chef}
-                
-//                 ></Chefs> )
-
-//             }
-//             </div>
-
-//         </div>
-          
-    
-//         </Container>
-//     );
-// };
 export default Details;
