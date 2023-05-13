@@ -8,7 +8,7 @@ import "./Works.css"
 const Works = () => {
     return (
         <Container>
-            <h3 className='text-center mt-5 '> Our works</h3>
+            <h3  className='text-center text-warning -fw-bold  mt-5'> Our works</h3>
             <div className='works-image'>
                 <img  className='ps-5 w-img' src={img} alt="" />
                 <img className='ps-5 w-img' src={img3} alt="" />

@@ -6,7 +6,7 @@ import { Container } from 'react-bootstrap';
 const Faq = () => {
     return (
         <Container>
-            <h2 className='text-center mt-5'>FAQ SECTION</h2>
+            <h2  className='text-center text-warning -fw-bold  mt-5'>FAQ SECTION</h2>
             <div className="container mt-5">
                 <div className="row">
                     <div className="col-sm-1 col-md-2 col-lg-6 ">

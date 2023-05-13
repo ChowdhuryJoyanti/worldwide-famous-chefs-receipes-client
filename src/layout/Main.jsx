@@ -20,8 +20,8 @@ const Main = () => {
             <NavBar></NavBar>
             {/* <Header></Header> */}
             <Outlet></Outlet>
-            <Works></Works>
-            <Faq></Faq>
+            {/* <Works></Works>
+            <Faq></Faq> */}
             <Footer></Footer>
             <PDFViewer>
                 <Blog></Blog>

@@ -1,20 +1,25 @@
 import React, { useContext } from 'react';
-import { Navbar,Nav,Container, Button, NavLink } from 'react-bootstrap';
+import { Navbar,Nav,Container, Button, NavLink, } from 'react-bootstrap';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { FaBeer, FaUserCircle, FaUserGraduate } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import img from '../../assets/shutterstock_153843404-300x300.jpeg'
+import { Link  } from 'react-router-dom';
+import img from '../../assets/user-2.png'
 import './Navbar.css'
-import Header from '../Shared/Header/Header';
+// import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+// import Tooltip from 'react-bootstrap/Tooltip';
+
+// import ReactTooltip from 'react-tooltip';
 
 
 const NavBar = () => {
-      // const navLinkStyle = ({isActive}) =>{
-      //   return{
-      //     fontWeight:isActive ? 'bold' : 'normal'
-          
-      //   }
-      // }
+      
+
+      // const renderTooltip = (props) => (
+      //   <Tooltip id="button-tooltip" {...props}>
+      //     Simple tooltip
+      //   </Tooltip>
+      // );
+
 
   const {user,logOut} = useContext(AuthContext);
 
@@ -31,16 +36,26 @@ const NavBar = () => {
         <Navbar.Brand className='text-warning fw-bold'>Food <span className='text-info'>Delicious</span></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mx-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/blog">Blog</Nav.Link>
+          <Nav defaultActiveKey="/home" className="mx-auto">
+            {/* <ActiveLink href="/">Home</ActiveLink>
+            <ActiveLink href="/blog">Blog</ActiveLink> */}
+
+             <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/blog">Blog</Nav.Link> 
            
           </Nav>
           <Nav>
             {user&&
               <Nav.Link href="">
               {/* <FaUserCircle style={{fontSize:'2rem'}}><img className='' src={img} alt="" srcset="" /></FaUserCircle></Nav.Link> */}
-             <img className='image' style={{fontSize:'2rem'}} src={img} alt="" srcset="" /></Nav.Link>
+              <img className='image' style={{fontSize:'2rem'}} src={img} alt="" srcset="" /></Nav.Link>
+            
+            //  <img className='image' style={{fontSize:'2rem'}} src={img} alt="" srcset="" /></Nav.Link>? <ReactTooltip /> :''
+      
+
+
+
+
             }
             <Nav.Link>
             {user ?
@@ -54,7 +69,35 @@ const NavBar = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-            {/* <Header></Header> */}
+         
+
+
+
+
+
+
+
+
+{/* 
+function TriggerExample() {
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Simple tooltip
+    </Tooltip>
+  );
+
+  return (
+    <OverlayTrigger
+      placement="right"
+      delay={{ show: 250, hide: 400 }}
+      overlay={renderTooltip}
+    >
+      <Button variant="success">Hover me to see</Button>
+    </OverlayTrigger>
+  );
+}
+
+export default TriggerExample; */}
         </Container>
     );
 };
