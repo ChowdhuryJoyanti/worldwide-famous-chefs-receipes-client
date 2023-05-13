@@ -23,12 +23,14 @@ const Login = () => {
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
 
-    const handleGoogleSignIn = () => {
+    const handleGoogleSignIn = event => {
+      event.preventDefault();
         signInWithPopup(auth,googleProvider)
         .then(result => {
           const loggedInUser = result.user;
           console.log(loggedInUser);
           setUsers(loggedInUser)
+          navigate(from,{replace:true})
         })
         .catch(error =>{
           console.log('error',error.message);
@@ -36,13 +38,15 @@ const Login = () => {
     }
   
 
-      const handleGithubSignIn = () =>{
+      const handleGithubSignIn = event =>{
+        event.preventDefault();
           console.log('github');
           signInWithPopup(auth,githubProvider )
           .then(result =>{
             const loggedUser  = result.user;
             console.log(loggedUser);
             setUsers(loggedUser)
+            navigate(from,{replace:true})
           })
           .catch(error => {
             console.log(error);
@@ -55,7 +59,7 @@ const Login = () => {
       const password = form.password.value;
       if(!password === password){
             setError('password did not matched')
-            return
+            return setError();
       }
       console.log(email,password);
 
